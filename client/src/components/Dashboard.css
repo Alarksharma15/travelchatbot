@@ -1,0 +1,97 @@
+/* src/components/Dashboard.css */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.dashboard-card {
+  background: rgba(30, 41, 59, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  background: rgba(30, 41, 59, 0.8);
+  border-color: rgba(59, 130, 246, 0.5); /* Blue glow */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Specific styling for Place cards */
+.place-card .card-icon {
+  color: #3b82f6;
+  margin-bottom: 0.5rem;
+}
+
+.place-card h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: #f1f5f9;
+}
+
+.place-card p {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin: 0.25rem 0 0 0;
+}
+
+/* Specific styling for Style cards */
+.style-card {
+  border-left: 3px solid #f59e0b; /* Orange accent */
+}
+
+.style-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.style-card h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #f1f5f9;
+}
+
+.style-card .arrow {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+  color: #f59e0b;
+}
+
+.dashboard-card:hover .arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.card-desc {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin: 0;
+}
