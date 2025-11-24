@@ -1,6 +1,29 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": "express",
-  "buildCommand": "npm install && npm run build",
-  "outputDirectory": "public"
+  "version": 2,
+  "builds": [
+    {
+      "src": "client/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    },
+    {
+      "src": "server/api/**/*.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/server/api/index.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/client/$1"
+    }
+  ],
+  "env": {
+    "GROQ_API_KEY": "@groq_api_key"
+  }
 }

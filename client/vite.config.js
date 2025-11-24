@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 export default defineConfig({
   plugins: [react()],
   build: {
-    outDir: path.resolve(__dirname, '../public'),
+    outDir: 'dist',
     emptyOutDir: true,
   },
 });
