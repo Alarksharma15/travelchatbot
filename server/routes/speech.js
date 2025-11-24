@@ -5,11 +5,15 @@ import fs from 'fs';
 import path from 'path';
 
 const router = express.Router();
+const uploadDir = '/tmp/uploads';
 
 // Configure multer for file upload
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, 'uploads/');
+        if (!fs.existsSync(uploadDir)) {
+            fs.mkdirSync(uploadDir, { recursive: true });
+        }
+        cb(null, uploadDir);
     },
     filename: (req, file, cb) => {
         // Derive extension from MIME type (e.g., audio/webm -> webm)

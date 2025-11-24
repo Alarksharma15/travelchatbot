@@ -5,7 +5,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { weatherCodeToKey } from '../i18n/translations';
 import './WeatherPanel.css';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_URL = import.meta.env.VITE_API_URL || '/api';
 
 // Weather code to emoji mapping
 const weatherEmojis = {

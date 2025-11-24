@@ -5,7 +5,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import AudioRecorder from './AudioRecorder';
 import './ChatInterface.css';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_URL = import.meta.env.VITE_API_URL || '/api';
 
 // Wrap component in forwardRef
 const ChatInterface = forwardRef(({ onCityMention, weatherData }, ref) => {
